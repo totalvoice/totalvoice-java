@@ -1,4 +1,4 @@
 # totalvoice-java
-Cliente Java pra API da TotalVoice
+Client em Java para utilização da API da TotalVoice
 
 ## Em desenvolvimento
