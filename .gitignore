@@ -1,8 +1,10 @@
 # Compiled class file
 *.class
+Main.java
 
 # Log file
 *.log
+.idea/
 
 # BlueJ files
 *.ctxt
