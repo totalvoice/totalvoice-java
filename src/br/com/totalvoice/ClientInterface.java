@@ -8,13 +8,16 @@ public interface ClientInterface {
     /**
      * @var String
      */
-    public static final String BASE_URL = "https://api2.totalvoice.com.br";
+    public static final String BASE_URL = "https://diegodev.totalvoice.com.br";
 
     /**
-     * GET method
-     * @return String
+     *
+     * @param route
+     * @param data
+     * @return
+     * @throws IOException
      */
-    public JSONObject get(String path, String data) throws IOException;
+    public JSONObject get(RequestInterface route, String data) throws IOException;
 
     /**
      * POST method

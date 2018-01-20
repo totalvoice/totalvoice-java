@@ -1,24 +1,23 @@
 package br.com.totalvoice;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.URL;
 
 import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.ResponseHandler;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpUriRequest;
-import org.apache.http.entity.ContentType;
-import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 
 public class TotalVoiceClient implements ClientInterface {
+
+    /**
+     * @var String
+     */
+    private static final String VERSION = "0.0.1";
 
     /**
      * Access Token
@@ -40,7 +39,7 @@ public class TotalVoiceClient implements ClientInterface {
     /**
      * @param token
      */
-    public TotalVoiceClient(String token) {
+    public TotalVoiceClient(final String token) {
         this.token = token;
         this.baseUrl = BASE_URL;
         this.client = HttpClients.createDefault();
@@ -50,17 +49,18 @@ public class TotalVoiceClient implements ClientInterface {
      * @param token
      * @param baseUrl
      */
-    public TotalVoiceClient(String token, String baseUrl) {
+    public TotalVoiceClient(final String token, final String baseUrl) {
         this.token = token;
         this.baseUrl = baseUrl;
         this.client = HttpClients.createDefault();
     }
 
     @Override
-    public JSONObject get(String path, String data) throws IOException {
+    public JSONObject get(RequestInterface request, String data) throws IOException {
 
-        HttpGet request = new HttpGet(baseUrl + path);
-        return execute(request);
+        System.out.println(request.getQueryString());
+        HttpGet get = new HttpGet(baseUrl + request.getPathString());
+        return execute(get);
     }
 
     @Override
