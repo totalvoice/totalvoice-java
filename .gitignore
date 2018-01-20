@@ -5,6 +5,7 @@ Main.java
 # Log file
 *.log
 .idea/
+.DS_Store
 
 # BlueJ files
 *.ctxt

@@ -8,7 +8,7 @@ public interface ClientInterface {
     /**
      * @var String
      */
-    public static final String BASE_URL = "https://diegodev.totalvoice.com.br";
+    public static final String BASE_URL = "https://api2.totalvoice.com.br";
 
     /**
      *
