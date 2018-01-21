@@ -1,33 +1,25 @@
 package br.com.totalvoice;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-import java.util.List;
 import java.util.Map;
 
 public class Request implements RequestInterface {
 
-    private List<?> path;
+    private Path path;
     private QueryString query;
 
     @Override
-    public void setPath(List<?> paths) {
-        path = paths;
+    public void setPath(Path path) {
+        path = path;
     }
 
     @Override
-    public List<?> getPath() {
+    public Path getPath() {
         return path;
     }
 
     @Override
     public String getPathString() {
-        String spath = "";
-        int count = path.size();
-        for (int i=0;i<count;i++) {
-            spath += "/" + path.get(i);
-        }
-        return spath;
+        return path.getPathString();
     }
 
     @Override

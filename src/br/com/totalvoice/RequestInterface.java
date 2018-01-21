@@ -1,6 +1,5 @@
 package br.com.totalvoice;
 
-import java.util.List;
 import java.util.Map;
 
 public interface RequestInterface {
@@ -9,13 +8,13 @@ public interface RequestInterface {
      *
      * @param path
      */
-    public void setPath(List<?> path);
+    public void setPath(Path path);
 
     /**
      *
      * @return List
      */
-    public List<?> getPath();
+    public Path getPath();
 
     /**
      * @return String

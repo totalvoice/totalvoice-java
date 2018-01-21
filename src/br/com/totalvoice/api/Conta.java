@@ -1,12 +1,12 @@
 package br.com.totalvoice.api;
 
 import br.com.totalvoice.ClientInterface;
+import br.com.totalvoice.Path;
 import br.com.totalvoice.QueryString;
 import br.com.totalvoice.Request;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class Conta {
 
@@ -20,7 +20,7 @@ public class Conta {
 
     public JSONObject consultaSaldo() throws IOException
     {
-        ArrayList path = new ArrayList();
+        Path path = new Path();
         path.add(ROTA_SALDO);
 
         QueryString query = new QueryString();
