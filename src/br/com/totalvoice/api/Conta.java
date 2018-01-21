@@ -2,7 +2,6 @@ package br.com.totalvoice.api;
 
 import br.com.totalvoice.ClientInterface;
 import br.com.totalvoice.Path;
-import br.com.totalvoice.QueryString;
 import br.com.totalvoice.Request;
 import org.json.JSONObject;
 
@@ -26,6 +25,6 @@ public class Conta {
         Request r = new Request();
         r.setPath(path);
 
-        return client.get(r, "");
+        return client.get(r);
     }
 }

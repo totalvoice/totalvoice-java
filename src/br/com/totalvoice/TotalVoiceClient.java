@@ -6,8 +6,8 @@ import org.apache.http.HttpEntity;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.ResponseHandler;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpUriRequest;
+import org.apache.http.client.methods.*;
+import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
@@ -56,27 +56,41 @@ public class TotalVoiceClient implements ClientInterface {
     }
 
     @Override
-    public JSONObject get(RequestInterface request, String data) throws IOException {
-        
-        HttpGet get = new HttpGet(baseUrl + request.getPathString());
+    public JSONObject get(RequestInterface request) throws IOException {
+
+        HttpGet get = new HttpGet(baseUrl + request.getURL());
         return execute(get);
     }
 
     @Override
-    public String post() {
-        return null;
+    public JSONObject post(RequestInterface request, JSONObject data) throws IOException {
+        HttpPost post = new HttpPost(baseUrl + request.getURL());
+        post.setEntity(new StringEntity(data.toString()));
+
+        return execute(post);
     }
 
     @Override
-    public String put() {
-        return null;
+    public JSONObject put(RequestInterface request, JSONObject data) throws IOException {
+
+        HttpPut put = new HttpPut(baseUrl + request.getURL());
+        put.setEntity(new StringEntity(data.toString()));
+
+        return execute(put);
     }
 
     @Override
-    public String delete() {
-        return null;
+    public JSONObject delete(RequestInterface request) throws IOException {
+        HttpDelete delete = new HttpDelete(baseUrl + request.getURL());
+        return execute(delete);
     }
 
+    /**
+     *
+     * @param request
+     * @return
+     * @throws IOException
+     */
     public JSONObject execute(HttpUriRequest request) throws IOException {
 
         request.addHeader("Access-Token", token);
@@ -94,6 +108,5 @@ public class TotalVoiceClient implements ClientInterface {
 
         String responseBody = client.execute(request, responseHandler);
         return new JSONObject(responseBody);
-        //return result.toString();
     }
 }

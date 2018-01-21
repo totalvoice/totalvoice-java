@@ -12,28 +12,27 @@ public interface ClientInterface {
 
     /**
      *
-     * @param route
-     * @param data
+     * @param request
      * @return
      * @throws IOException
      */
-    public JSONObject get(RequestInterface route, String data) throws IOException;
+    public JSONObject get(RequestInterface request) throws IOException;
 
     /**
      * POST method
      * @return String
      */
-    public String post();
+    public JSONObject post(RequestInterface request, JSONObject data) throws IOException;
 
     /**
      * PUT method
      * @return String
      */
-    public String put();
+    public JSONObject put(RequestInterface request, JSONObject data) throws IOException;
 
     /**
      * DELETE method
      * @return String
      */
-    public String delete();
+    public JSONObject delete(RequestInterface request) throws IOException;
 }

@@ -48,14 +48,4 @@ public class Request implements RequestInterface {
     public String getURL() {
         return (getPathString() + getQueryString()).trim();
     }
-
-    @Override
-    public void setData(Map<String, ?> data) {
-
-    }
-
-    @Override
-    public Map<String, ?> getData() {
-        return null;
-    }
 }

@@ -43,16 +43,4 @@ public interface RequestInterface {
      * @return String
      */
     public String getQueryString();
-
-    /**
-     *
-     * @param data
-     */
-    public void setData(Map<String, ?> data);
-
-    /**
-     *
-     * @return Map
-     */
-    public Map<String, ?> getData();
 }
