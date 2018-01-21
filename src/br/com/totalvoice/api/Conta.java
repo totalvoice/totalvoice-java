@@ -23,15 +23,8 @@ public class Conta {
         Path path = new Path();
         path.add(ROTA_SALDO);
 
-        QueryString query = new QueryString();
-        query.add("data_inicio", "2018-01-10");
-        query.add("status",true);
-        query.add("numero",123456);
-        query.add("s", "Outro teste meu");
-
         Request r = new Request();
         r.setPath(path);
-        r.setQuery(query);
 
         return client.get(r, "");
     }

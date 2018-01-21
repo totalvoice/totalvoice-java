@@ -9,7 +9,7 @@ public class Request implements RequestInterface {
 
     @Override
     public void setPath(Path path) {
-        path = path;
+        this.path = path;
     }
 
     @Override
@@ -19,6 +19,9 @@ public class Request implements RequestInterface {
 
     @Override
     public String getPathString() {
+        if(path == null) {
+            return "";
+        }
         return path.getPathString();
     }
 
@@ -35,10 +38,15 @@ public class Request implements RequestInterface {
     @Override
     public String getQueryString() {
 
-        if(query.isEmpty()) {
+        if(query == null || query.isEmpty()) {
             return "";
         }
         return query.build();
+    }
+
+    @Override
+    public String getURL() {
+        return (getPathString() + getQueryString()).trim();
     }
 
     @Override

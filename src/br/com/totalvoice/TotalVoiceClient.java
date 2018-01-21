@@ -57,7 +57,7 @@ public class TotalVoiceClient implements ClientInterface {
 
     @Override
     public JSONObject get(RequestInterface request, String data) throws IOException {
-
+        
         HttpGet get = new HttpGet(baseUrl + request.getPathString());
         return execute(get);
     }

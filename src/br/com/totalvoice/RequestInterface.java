@@ -22,6 +22,11 @@ public interface RequestInterface {
     public String getPathString();
 
     /**
+     * @return String
+     */
+    public String getURL();
+
+    /**
      *
      * @param query
      */
