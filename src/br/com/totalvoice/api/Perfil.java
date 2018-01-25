@@ -130,5 +130,24 @@ public class Perfil {
 
         return client.delete(request);
     }
+
+    /**
+     * Cadastra ou atualiza um webhook
+     * @return
+     * @throws IOException
+     */
+    public JSONObject salvaWebhook(String nome, String url) throws IOException
+    {
+        Path path = new Path();
+        path.add(ROTA_WEBHOOK);
+        path.add(nome);
+
+        request.setPath(path);
+
+        JSONObject data = new JSONObject();
+        data.put("url", url);
+
+        return client.put(request, data);
+    }
 }
 
