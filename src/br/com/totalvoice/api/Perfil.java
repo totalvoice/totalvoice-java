@@ -8,18 +8,25 @@ import br.com.totalvoice.RequestInterface;
 import org.json.JSONObject;
 import java.io.IOException;
 
-public class Perfil {
+public class Perfil extends Api {
 
     public static final String ROTA_CONTA   = "conta";
     public static final String ROTA_WEBHOOK = "webhook";
     public static final String ROTA_SALDO   = "saldo";
 
-    private ClientInterface client;
-    private RequestInterface request;
-
+    /**
+     * @param client
+     */
     public Perfil(ClientInterface client) {
-        this.client = client;
-        this.request = new Request();        
+        super(client);
+    }
+
+    /**
+     * @param client
+     * @param request
+     */
+    public Perfil(ClientInterface client, RequestInterface request) {
+        super(client, request);
     }
 
     /**
