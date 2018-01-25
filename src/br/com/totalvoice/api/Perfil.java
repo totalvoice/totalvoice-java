@@ -3,7 +3,6 @@ package br.com.totalvoice.api;
 import br.com.totalvoice.ClientInterface;
 import br.com.totalvoice.Path;
 import br.com.totalvoice.QueryString;
-import br.com.totalvoice.Request;
 import br.com.totalvoice.RequestInterface;
 import org.json.JSONObject;
 import java.io.IOException;
