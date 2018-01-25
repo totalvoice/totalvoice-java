@@ -6,7 +6,7 @@ import br.com.totalvoice.RequestInterface;
 
 public class Sms extends Api {
 
-    public static final String ROTA_SMS   = "sms";
+    public static final String ROTA_SMS = "sms";
 
     public Sms(ClientInterface client) {
         super(client);
