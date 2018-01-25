@@ -57,7 +57,6 @@ public class TotalVoiceClient implements ClientInterface {
 
     @Override
     public JSONObject get(RequestInterface request) throws IOException {
-
         HttpGet get = new HttpGet(baseUrl + request.getURL());
         return execute(get);
     }
@@ -66,16 +65,13 @@ public class TotalVoiceClient implements ClientInterface {
     public JSONObject post(RequestInterface request, JSONObject data) throws IOException {
         HttpPost post = new HttpPost(baseUrl + request.getURL());
         post.setEntity(new StringEntity(data.toString()));
-
         return execute(post);
     }
 
     @Override
     public JSONObject put(RequestInterface request, JSONObject data) throws IOException {
-
         HttpPut put = new HttpPut(baseUrl + request.getURL());
         put.setEntity(new StringEntity(data.toString()));
-
         return execute(put);
     }
 
