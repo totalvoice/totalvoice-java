@@ -114,5 +114,21 @@ public class Perfil {
 
         return client.get(request);
     }
+
+    /**
+     * Apaga um Webhook
+     * @return
+     * @throws IOException
+     */
+    public JSONObject excluirWebhook(String nome) throws IOException
+    {
+        Path path = new Path();
+        path.add(ROTA_WEBHOOK);
+        path.add(nome);
+
+        request.setPath(path);
+
+        return client.delete(request);
+    }
 }
 
