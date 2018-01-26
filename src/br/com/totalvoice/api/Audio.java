@@ -3,7 +3,6 @@ package br.com.totalvoice.api;
 import br.com.totalvoice.*;
 import org.json.JSONObject;
 
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -31,10 +30,10 @@ public class Audio extends Api {
      * @param numero
      * @param urlAudio
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject enviar(String numero, String urlAudio) throws IOException
-    {
+    public JSONObject enviar(String numero, String urlAudio) throws Exception {
+
         JSONObject data = new JSONObject();
         data.put("numero_destino", numero);
         data.put("url_audio", urlAudio);
@@ -51,10 +50,10 @@ public class Audio extends Api {
      * @param numero
      * @param urlAudio
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject enviar(String numero, String urlAudio, boolean respostaUsuario) throws IOException
-    {
+    public JSONObject enviar(String numero, String urlAudio, boolean respostaUsuario) throws Exception {
+
         JSONObject data = new JSONObject();
         data.put("numero_destino", numero);
         data.put("url_audio", urlAudio);
@@ -74,10 +73,10 @@ public class Audio extends Api {
      * @param respostaUsuario
      * @param bina
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject enviar(String numero, String urlAudio, boolean respostaUsuario, String bina) throws IOException
-    {
+    public JSONObject enviar(String numero, String urlAudio, boolean respostaUsuario, String bina) throws Exception {
+
         JSONObject data = new JSONObject();
         data.put("numero_destino", numero);
         data.put("url_audio", urlAudio);
@@ -97,10 +96,10 @@ public class Audio extends Api {
      * @param urlAudio
      * @param bina
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject enviar(String numero, String urlAudio, String bina) throws IOException
-    {
+    public JSONObject enviar(String numero, String urlAudio, String bina) throws Exception {
+
         JSONObject data = new JSONObject();
         data.put("numero_destino", numero);
         data.put("url_audio", urlAudio);
@@ -117,10 +116,10 @@ public class Audio extends Api {
      * Busca um envio de audio pelo seu ID
      * @param id
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject buscar(int id) throws IOException
-    {
+    public JSONObject buscar(int id) throws Exception {
+
         Path path = new Path();
         path.add(ROTA_AUDIO);
         path.add(id);
@@ -135,10 +134,10 @@ public class Audio extends Api {
      * @param dataInicio
      * @param dataFim
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject relatorio(Date dataInicio, Date dataFim) throws IOException
-    {
+    public JSONObject relatorio(Date dataInicio, Date dataFim) throws Exception {
+
         SimpleDateFormat formatter = new SimpleDateFormat(Constants.DATE_FORMAT);
 
         String dataInicial = formatter.format(dataInicio);

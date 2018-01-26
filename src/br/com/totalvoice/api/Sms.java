@@ -3,7 +3,6 @@ package br.com.totalvoice.api;
 import br.com.totalvoice.*;
 import org.json.JSONObject;
 
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -24,10 +23,10 @@ public class Sms extends Api {
      * @param numero
      * @param mensagem
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject enviar(String numero, String mensagem) throws IOException
-    {
+    public JSONObject enviar(String numero, String mensagem) throws Exception {
+
         JSONObject data = new JSONObject();
         data.put("numero_destino", numero);
         data.put("mensagem", mensagem);
@@ -45,10 +44,10 @@ public class Sms extends Api {
      * @param mensagem
      * @param respostaUsuario
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject enviar(String numero, String mensagem, boolean respostaUsuario) throws IOException
-    {
+    public JSONObject enviar(String numero, String mensagem, boolean respostaUsuario) throws Exception {
+
         JSONObject data = new JSONObject();
         data.put("numero_destino", numero);
         data.put("mensagem", mensagem);
@@ -67,10 +66,10 @@ public class Sms extends Api {
      * @param mensagem
      * @param multiSMS
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject enviar(String numero, String mensagem, boolean respostaUsuario, boolean multiSMS) throws IOException
-    {
+    public JSONObject enviar(String numero, String mensagem, boolean respostaUsuario, boolean multiSMS) throws Exception {
+
         JSONObject data = new JSONObject();
         data.put("numero_destino", numero);
         data.put("mensagem", mensagem);
@@ -88,10 +87,10 @@ public class Sms extends Api {
      * Busca um sms pelo seu ID
      * @param id
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject buscar(int id) throws IOException
-    {
+    public JSONObject buscar(int id) throws Exception {
+
         Path path = new Path();
         path.add(ROTA_SMS);
         path.add(id);
@@ -106,10 +105,10 @@ public class Sms extends Api {
      * @param dataInicio
      * @param dataFim
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject relatorio(Date dataInicio, Date dataFim) throws IOException
-    {
+    public JSONObject relatorio(Date dataInicio, Date dataFim) throws Exception {
+
         SimpleDateFormat formatter = new SimpleDateFormat(Constants.DATE_FORMAT);
 
         String dataInicial = formatter.format(dataInicio);

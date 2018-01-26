@@ -5,8 +5,6 @@ import br.com.totalvoice.Path;
 import br.com.totalvoice.RequestInterface;
 import org.json.JSONObject;
 
-import java.io.IOException;
-
 public class Conta extends Api {
 
     public static final String ROTA_CONTA = "conta";
@@ -30,10 +28,10 @@ public class Conta extends Api {
      * Cria uma nova conta na plataforma
      * @param data
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject criar(JSONObject data) throws IOException
-    {
+    public JSONObject criar(JSONObject data) throws Exception {
+
         Path path = new Path();
         path.add(ROTA_CONTA);
         request.setPath(path);
@@ -46,10 +44,10 @@ public class Conta extends Api {
      * @param id
      * @param data
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject atualizar(int id, JSONObject data) throws IOException
-    {
+    public JSONObject atualizar(int id, JSONObject data) throws Exception {
+
         Path path = new Path();
         path.add(ROTA_CONTA);
         path.add(id);
@@ -63,10 +61,10 @@ public class Conta extends Api {
      * Atualiza os dados de uma conta
      * @param data
      * @return
-     * @throws Exception, IOException
+     * @throws Exception
      */
-    public JSONObject atualizar(JSONObject data) throws Exception, IOException
-    {
+    public JSONObject atualizar(JSONObject data) throws Exception {
+
         Object id = data.get("id");
         if(id == null) {
             throw new Exception("Nao foi possivel recuperar o ID da Conta");
@@ -84,10 +82,10 @@ public class Conta extends Api {
      * Leitura dos dados da Conta criada
      * @param id
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject buscar(int id) throws IOException
-    {
+    public JSONObject buscar(int id) throws Exception {
+
         Path path = new Path();
         path.add(ROTA_CONTA);
         path.add(id);
@@ -101,10 +99,10 @@ public class Conta extends Api {
      * Remove uma conta
      * @param id
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject excluir(int id) throws IOException
-    {
+    public JSONObject excluir(int id) throws Exception {
+
         Path path = new Path();
         path.add(ROTA_CONTA);
         path.add(id);
@@ -117,10 +115,10 @@ public class Conta extends Api {
     /**
      * Leitura dos dados da Conta criada
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject relatorio() throws IOException
-    {
+    public JSONObject relatorio() throws Exception {
+
         Path path = new Path();
         path.add(ROTA_CONTA);
         path.add("relatorio");

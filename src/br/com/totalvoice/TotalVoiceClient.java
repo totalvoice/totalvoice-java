@@ -1,7 +1,5 @@
 package br.com.totalvoice;
 
-import java.io.IOException;
-
 import org.apache.http.HttpEntity;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
@@ -56,27 +54,27 @@ public class TotalVoiceClient implements ClientInterface {
     }
 
     @Override
-    public JSONObject get(RequestInterface request) throws IOException {
+    public JSONObject get(RequestInterface request) throws Exception {
         HttpGet get = new HttpGet(baseUrl + request.getURL());
         return execute(get);
     }
 
     @Override
-    public JSONObject post(RequestInterface request, JSONObject data) throws IOException {
+    public JSONObject post(RequestInterface request, JSONObject data) throws Exception {
         HttpPost post = new HttpPost(baseUrl + request.getURL());
         post.setEntity(new StringEntity(data.toString()));
         return execute(post);
     }
 
     @Override
-    public JSONObject put(RequestInterface request, JSONObject data) throws IOException {
+    public JSONObject put(RequestInterface request, JSONObject data) throws Exception {
         HttpPut put = new HttpPut(baseUrl + request.getURL());
         put.setEntity(new StringEntity(data.toString()));
         return execute(put);
     }
 
     @Override
-    public JSONObject delete(RequestInterface request) throws IOException {
+    public JSONObject delete(RequestInterface request) throws Exception {
         HttpDelete delete = new HttpDelete(baseUrl + request.getURL());
         return execute(delete);
     }
@@ -85,9 +83,9 @@ public class TotalVoiceClient implements ClientInterface {
      *
      * @param request
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject execute(HttpUriRequest request) throws IOException {
+    public JSONObject execute(HttpUriRequest request) throws Exception {
 
         request.addHeader("Access-Token", token);
         request.addHeader("Content-Type", "application/json");

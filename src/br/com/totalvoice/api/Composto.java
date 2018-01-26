@@ -3,7 +3,6 @@ package br.com.totalvoice.api;
 import br.com.totalvoice.*;
 import org.json.JSONObject;
 
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -23,10 +22,10 @@ public class Composto extends Api {
      * Envia um composto para um número destino
      * @param data
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject enviar(JSONObject data) throws IOException
-    {
+    public JSONObject enviar(JSONObject data) throws Exception {
+
         Path path = new Path();
         path.add(ROTA_COMPOSTO);
         request.setPath(path);
@@ -38,10 +37,10 @@ public class Composto extends Api {
      * Busca um composto pelo seu ID
      * @param id
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject buscar(int id) throws IOException
-    {
+    public JSONObject buscar(int id) throws Exception {
+
         Path path = new Path();
         path.add(ROTA_COMPOSTO);
         path.add(id);
@@ -56,10 +55,10 @@ public class Composto extends Api {
      * @param dataInicio
      * @param dataFim
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject relatorio(Date dataInicio, Date dataFim) throws IOException
-    {
+    public JSONObject relatorio(Date dataInicio, Date dataFim) throws Exception {
+
         SimpleDateFormat formatter = new SimpleDateFormat(Constants.DATE_FORMAT);
 
         String dataInicial = formatter.format(dataInicio);

@@ -5,8 +5,6 @@ import br.com.totalvoice.Path;
 import br.com.totalvoice.RequestInterface;
 import org.json.JSONObject;
 
-import java.io.IOException;
-
 public class Conferencia extends Api {
 
     public static final String ROTA_CONFERENCIA = "conferencia";
@@ -22,10 +20,10 @@ public class Conferencia extends Api {
     /**
      * Cria uma conferencia
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject criar() throws IOException
-    {
+    public JSONObject criar() throws Exception {
+
         Path path = new Path();
         path.add(ROTA_CONFERENCIA);
         request.setPath(path);
@@ -38,10 +36,10 @@ public class Conferencia extends Api {
      * @param id
      * @param numero
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject addNumeroConferencia(int id, String numero) throws IOException
-    {
+    public JSONObject addNumeroConferencia(int id, String numero) throws Exception {
+
         JSONObject data = new JSONObject();
         data.put("numero", numero);
 
@@ -60,10 +58,10 @@ public class Conferencia extends Api {
      * @param numero
      * @param bina
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject addNumeroConferencia(int id, String numero, String bina) throws IOException
-    {
+    public JSONObject addNumeroConferencia(int id, String numero, String bina) throws Exception {
+
         JSONObject data = new JSONObject();
         data.put("numero", numero);
         data.put("bina", bina);
@@ -84,9 +82,9 @@ public class Conferencia extends Api {
      * @param bina
      * @param gravarAudio
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject addNumeroConferencia(int id, String numero, String bina, boolean gravarAudio) throws IOException
+    public JSONObject addNumeroConferencia(int id, String numero, String bina, boolean gravarAudio) throws Exception
     {
         JSONObject data = new JSONObject();
         data.put("numero", numero);
@@ -108,9 +106,9 @@ public class Conferencia extends Api {
      * @param numero
      * @param gravarAudio
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject addNumeroConferencia(int id, String numero, boolean gravarAudio) throws IOException
+    public JSONObject addNumeroConferencia(int id, String numero, boolean gravarAudio) throws Exception
     {
         JSONObject data = new JSONObject();
         data.put("numero", numero);
@@ -129,9 +127,9 @@ public class Conferencia extends Api {
      * Busca uma conferencia
      * @param id
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject buscar(int id) throws IOException
+    public JSONObject buscar(int id) throws Exception
     {
         Path path = new Path();
         path.add(ROTA_CONFERENCIA);
@@ -146,9 +144,9 @@ public class Conferencia extends Api {
      * Remove uma conferencia
      * @param id
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject excluir(int id) throws IOException
+    public JSONObject excluir(int id) throws Exception
     {
         Path path = new Path();
         path.add(ROTA_CONFERENCIA);

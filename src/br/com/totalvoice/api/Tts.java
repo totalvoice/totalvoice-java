@@ -3,7 +3,6 @@ package br.com.totalvoice.api;
 import br.com.totalvoice.*;
 import org.json.JSONObject;
 
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -24,10 +23,10 @@ public class Tts extends Api {
      * @param numero
      * @param mensagem
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject enviar(String numero, String mensagem) throws IOException
-    {
+    public JSONObject enviar(String numero, String mensagem) throws Exception {
+
         JSONObject data = new JSONObject();
         data.put("numero_destino", numero);
         data.put("mensagem", mensagem);
@@ -45,10 +44,10 @@ public class Tts extends Api {
      * @param mensagem
      * @param velocidade
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject enviar(String numero, String mensagem, int velocidade) throws IOException
-    {
+    public JSONObject enviar(String numero, String mensagem, int velocidade) throws Exception {
+
         JSONObject data = new JSONObject();
         data.put("numero_destino", numero);
         data.put("mensagem", mensagem);
@@ -68,10 +67,10 @@ public class Tts extends Api {
      * @param velocidade
      * @param respostaUsuario
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject enviar(String numero, String mensagem, int velocidade, boolean respostaUsuario) throws IOException
-    {
+    public JSONObject enviar(String numero, String mensagem, int velocidade, boolean respostaUsuario) throws Exception {
+
         JSONObject data = new JSONObject();
         data.put("numero_destino", numero);
         data.put("mensagem", mensagem);
@@ -93,10 +92,10 @@ public class Tts extends Api {
      * @param respostaUsuario
      * @param tipoVoz
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject enviar(String numero, String mensagem, int velocidade, boolean respostaUsuario, String tipoVoz) throws IOException
-    {
+    public JSONObject enviar(String numero, String mensagem, int velocidade, boolean respostaUsuario, String tipoVoz) throws Exception {
+
         JSONObject data = new JSONObject();
         data.put("numero_destino", numero);
         data.put("mensagem", mensagem);
@@ -120,10 +119,10 @@ public class Tts extends Api {
      * @param tipoVoz
      * @param bina
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject enviar(String numero, String mensagem, int velocidade, boolean respostaUsuario, String tipoVoz, String bina) throws IOException
-    {
+    public JSONObject enviar(String numero, String mensagem, int velocidade, boolean respostaUsuario, String tipoVoz, String bina) throws Exception {
+
         JSONObject data = new JSONObject();
         data.put("numero_destino", numero);
         data.put("mensagem", mensagem);
@@ -145,10 +144,10 @@ public class Tts extends Api {
      * @param mensagem
      * @param respostaUsuario
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject enviar(String numero, String mensagem, boolean respostaUsuario) throws IOException
-    {
+    public JSONObject enviar(String numero, String mensagem, boolean respostaUsuario) throws Exception {
+
         JSONObject data = new JSONObject();
         data.put("numero_destino", numero);
         data.put("mensagem", mensagem);
@@ -168,10 +167,10 @@ public class Tts extends Api {
      * @param respostaUsuario
      * @param tipoVoz
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject enviar(String numero, String mensagem, boolean respostaUsuario, String tipoVoz) throws IOException
-    {
+    public JSONObject enviar(String numero, String mensagem, boolean respostaUsuario, String tipoVoz) throws Exception {
+
         JSONObject data = new JSONObject();
         data.put("numero_destino", numero);
         data.put("mensagem", mensagem);
@@ -193,10 +192,10 @@ public class Tts extends Api {
      * @param tipoVoz
      * @param bina
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject enviar(String numero, String mensagem, boolean respostaUsuario, String tipoVoz, String bina) throws IOException
-    {
+    public JSONObject enviar(String numero, String mensagem, boolean respostaUsuario, String tipoVoz, String bina) throws Exception {
+
         JSONObject data = new JSONObject();
         data.put("numero_destino", numero);
         data.put("mensagem", mensagem);
@@ -217,10 +216,10 @@ public class Tts extends Api {
      * @param mensagem
      * @param tipoVoz
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject enviar(String numero, String mensagem, String tipoVoz) throws IOException
-    {
+    public JSONObject enviar(String numero, String mensagem, String tipoVoz) throws Exception {
+
         JSONObject data = new JSONObject();
         data.put("numero_destino", numero);
         data.put("mensagem", mensagem);
@@ -240,10 +239,10 @@ public class Tts extends Api {
      * @param tipoVoz
      * @param bina
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject enviar(String numero, String mensagem, String tipoVoz, String bina) throws IOException
-    {
+    public JSONObject enviar(String numero, String mensagem, String tipoVoz, String bina) throws Exception {
+
         JSONObject data = new JSONObject();
         data.put("numero_destino", numero);
         data.put("mensagem", mensagem);
@@ -264,10 +263,10 @@ public class Tts extends Api {
      * @param bina
      * @param velocidade
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject enviar(String numero, String mensagem, String bina, int velocidade) throws IOException
-    {
+    public JSONObject enviar(String numero, String mensagem, String bina, int velocidade) throws Exception {
+
         JSONObject data = new JSONObject();
         data.put("numero_destino", numero);
         data.put("mensagem", mensagem);
@@ -285,10 +284,10 @@ public class Tts extends Api {
      * Busca um TTS pelo seu ID
      * @param id
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject buscar(int id) throws IOException
-    {
+    public JSONObject buscar(int id) throws Exception {
+
         Path path = new Path();
         path.add(ROTA_TTS);
         path.add(id);
@@ -303,10 +302,10 @@ public class Tts extends Api {
      * @param dataInicio
      * @param dataFim
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject relatorio(Date dataInicio, Date dataFim) throws IOException
-    {
+    public JSONObject relatorio(Date dataInicio, Date dataFim) throws Exception {
+
         SimpleDateFormat formatter = new SimpleDateFormat(Constants.DATE_FORMAT);
 
         String dataInicial = formatter.format(dataInicio);

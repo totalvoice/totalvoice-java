@@ -5,8 +5,6 @@ import br.com.totalvoice.Path;
 import br.com.totalvoice.RequestInterface;
 import org.json.JSONObject;
 
-import java.io.IOException;
-
 public class Did extends Api {
 
     public static final String ROTA_DID = "did";
@@ -29,10 +27,10 @@ public class Did extends Api {
     /**
      * Lista todos os DIDs pertencentes
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject listar() throws IOException
-    {
+    public JSONObject listar() throws Exception {
+
         Path path = new Path();
         path.add(ROTA_DID);
 
@@ -45,10 +43,10 @@ public class Did extends Api {
      * Remove um DID
      * @param id
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject excluir(int id) throws IOException
-    {
+    public JSONObject excluir(int id) throws Exception {
+
         Path path = new Path();
         path.add(ROTA_DID);
         path.add(id);
@@ -63,10 +61,10 @@ public class Did extends Api {
      * @param id
      * @param data
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject atualizar(int id, JSONObject data) throws IOException
-    {
+    public JSONObject atualizar(int id, JSONObject data) throws Exception {
+
         Path path = new Path();
         path.add(ROTA_DID);
         path.add(id);
@@ -81,10 +79,9 @@ public class Did extends Api {
      * @param data
      * @return
      * @throws Exception
-     * @throws IOException
      */
-    public JSONObject atualizar(JSONObject data) throws Exception, IOException
-    {
+    public JSONObject atualizar(JSONObject data) throws Exception {
+
         Object id = data.get("id");
         if(id == null) {
             throw new Exception("Nao foi possivel recuperar o ID da Conta");
@@ -101,10 +98,10 @@ public class Did extends Api {
     /**
      * Lista todos os DIDs disponiveis
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject estoque() throws IOException
-    {
+    public JSONObject estoque() throws Exception {
+
         Path path = new Path();
         path.add(ROTA_DID);
         path.add("estoque");
@@ -118,10 +115,10 @@ public class Did extends Api {
      * Adquire um novo did para sua conta
      * @param id
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject adquirir(int id) throws IOException
-    {
+    public JSONObject adquirir(int id) throws Exception {
+
         Path path = new Path();
         path.add(ROTA_DID);
         path.add("estoque");
@@ -135,10 +132,10 @@ public class Did extends Api {
     /**
      * Lista todos os DIDs disponiveis
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject buscaChamadaRecebida(int id) throws IOException
-    {
+    public JSONObject buscaChamadaRecebida(int id) throws Exception {
+
         Path path = new Path();
         path.add(ROTA_DID);
         path.add("chamada");

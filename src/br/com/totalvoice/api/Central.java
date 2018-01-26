@@ -3,7 +3,6 @@ package br.com.totalvoice.api;
 import br.com.totalvoice.*;
 import org.json.JSONObject;
 
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -32,10 +31,10 @@ public class Central extends Api {
      * Cria um novo ramal
      * @param data
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject criarRamal(JSONObject data) throws IOException
-    {
+    public JSONObject criarRamal(JSONObject data) throws Exception {
+
         Path path = new Path();
         path.add(ROTA_RAMAL);
         request.setPath(path);
@@ -47,10 +46,10 @@ public class Central extends Api {
      * Atualiza um ramal
      * @param data
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject atualizarRamal(int id, JSONObject data) throws IOException
-    {
+    public JSONObject atualizarRamal(int id, JSONObject data) throws Exception {
+        
         Path path = new Path();
         path.add(ROTA_RAMAL);
         path.add(id);
@@ -65,10 +64,9 @@ public class Central extends Api {
      * @param data
      * @return
      * @throws Exception
-     * @throws IOException
      */
-    public JSONObject atualizarRamal(JSONObject data) throws Exception, IOException
-    {
+    public JSONObject atualizarRamal(JSONObject data) throws Exception {
+
         Object id = data.get("id");
         if(id == null) {
             throw new Exception("Nao foi possivel recuperar o ID da Conta");
@@ -85,10 +83,10 @@ public class Central extends Api {
     /**
      * Excluir ramal
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject excluirRamal(int id) throws IOException
-    {
+    public JSONObject excluirRamal(int id) throws Exception {
+
         Path path = new Path();
         path.add(ROTA_RAMAL);
         path.add(id);
@@ -102,10 +100,10 @@ public class Central extends Api {
      * Busca um ramal pelo seu ID
      * @param id
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject buscarRamal(int id) throws IOException
-    {
+    public JSONObject buscarRamal(int id) throws Exception {
+
         Path path = new Path();
         path.add(ROTA_RAMAL);
         path.add(id);
@@ -120,10 +118,10 @@ public class Central extends Api {
      * @param dataInicio
      * @param dataFim
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject relatorio(Date dataInicio, Date dataFim) throws IOException
-    {
+    public JSONObject relatorio(Date dataInicio, Date dataFim) throws Exception {
+
         SimpleDateFormat formatter = new SimpleDateFormat(Constants.DATE_FORMAT);
 
         String dataInicial = formatter.format(dataInicio);
@@ -147,10 +145,10 @@ public class Central extends Api {
      * Requisita a URL do webphone de um ramal
      * @param data
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject webphone(JSONObject data) throws IOException
-    {
+    public JSONObject webphone(JSONObject data) throws Exception {
+
         Path path = new Path();
         path.add(ROTA_WEBPHONE);
 
@@ -169,10 +167,10 @@ public class Central extends Api {
     /**
      * Requisita a URL do webphone de um ramal
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject webphone() throws IOException
-    {
+    public JSONObject webphone() throws Exception {
+
         Path path = new Path();
         path.add(ROTA_WEBPHONE);
 
@@ -185,10 +183,10 @@ public class Central extends Api {
      * Criar URA
      * @param data
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject criarUra(JSONObject data) throws IOException
-    {
+    public JSONObject criarUra(JSONObject data) throws Exception {
+
         Path path = new Path();
         path.add(ROTA_URA);
         request.setPath(path);
@@ -199,10 +197,10 @@ public class Central extends Api {
     /**
      * Excluir URA
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject excluirUra(int id) throws IOException
-    {
+    public JSONObject excluirUra(int id) throws Exception {
+
         Path path = new Path();
         path.add(ROTA_URA);
         path.add(id);
@@ -216,10 +214,10 @@ public class Central extends Api {
      * Atualizar URA
      * @param data
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject atualizarUra(int id, JSONObject data) throws IOException
-    {
+    public JSONObject atualizarUra(int id, JSONObject data) throws Exception {
+
         Path path = new Path();
         path.add(ROTA_URA);
         path.add(id);
@@ -234,10 +232,9 @@ public class Central extends Api {
      * @param data
      * @return
      * @throws Exception
-     * @throws IOException
      */
-    public JSONObject atualizarUra(JSONObject data) throws Exception, IOException
-    {
+    public JSONObject atualizarUra(JSONObject data) throws Exception {
+
         Object id = data.get("id");
         if(id == null) {
             throw new Exception("Nao foi possivel recuperar o ID da Conta");

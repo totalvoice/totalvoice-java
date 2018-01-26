@@ -3,7 +3,6 @@ package br.com.totalvoice.api;
 import br.com.totalvoice.*;
 import org.json.JSONObject;
 
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -31,10 +30,10 @@ public class Chamada extends Api {
      * @param numeroOrigem
      * @param numeroDestino
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject ligar(String numeroOrigem, String numeroDestino) throws IOException
-    {
+    public JSONObject ligar(String numeroOrigem, String numeroDestino) throws Exception {
+
         JSONObject data = new JSONObject();
         data.put("numero_origem", numeroOrigem);
         data.put("numero_destino", numeroDestino);
@@ -52,10 +51,10 @@ public class Chamada extends Api {
      * @param numeroDestino
      * @param opcoes
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject ligar(String numeroOrigem, String numeroDestino, JSONObject opcoes) throws IOException
-    {
+    public JSONObject ligar(String numeroOrigem, String numeroDestino, JSONObject opcoes) throws Exception {
+
         opcoes.put("numero_origem", numeroOrigem);
         opcoes.put("numero_destino", numeroDestino);
 
@@ -70,10 +69,10 @@ public class Chamada extends Api {
      * busca os dados da chamada
      * @param id
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject buscar(int id) throws IOException
-    {
+    public JSONObject buscar(int id) throws Exception {
+
         Path path = new Path();
         path.add(ROTA_CHAMADA);
         path.add(id);
@@ -86,10 +85,10 @@ public class Chamada extends Api {
     /**
      * Encerrar chamada ativa
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject encerrar(int id) throws IOException
-    {
+    public JSONObject encerrar(int id) throws Exception {
+
         Path path = new Path();
         path.add(ROTA_CHAMADA);
         path.add(id);
@@ -103,10 +102,10 @@ public class Chamada extends Api {
      * URL para download do audio
      * @param id
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject downloadGravacao(int id) throws IOException
-    {
+    public JSONObject downloadGravacao(int id) throws Exception {
+
         Path path = new Path();
         path.add(ROTA_CHAMADA);
         path.add(id);
@@ -122,10 +121,10 @@ public class Chamada extends Api {
      * @param dataInicio
      * @param dataFim
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject relatorio(Date dataInicio, Date dataFim) throws IOException
-    {
+    public JSONObject relatorio(Date dataInicio, Date dataFim) throws Exception {
+
         SimpleDateFormat formatter = new SimpleDateFormat(Constants.DATE_FORMAT);
 
         String dataInicial = formatter.format(dataInicio);
@@ -151,10 +150,10 @@ public class Chamada extends Api {
      * @param numero
      * @param modo
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject escutar(int id, String numero, int modo) throws IOException
-    {
+    public JSONObject escutar(int id, String numero, int modo) throws Exception {
+
         JSONObject data = new JSONObject();
         data.put("numero", numero);
         data.put("modo", modo);
@@ -175,10 +174,10 @@ public class Chamada extends Api {
      * @param numero
      * @param perna
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject transferir(int id, String numero, String perna) throws IOException
-    {
+    public JSONObject transferir(int id, String numero, String perna) throws Exception {
+
         JSONObject data = new JSONObject();
         data.put("numero", numero);
         data.put("perna", perna);
@@ -198,10 +197,10 @@ public class Chamada extends Api {
      * @param id
      * @param nota
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject avaliar(int id, String nota) throws IOException
-    {
+    public JSONObject avaliar(int id, String nota) throws Exception {
+
         JSONObject data = new JSONObject();
         data.put("nota", nota);
 
@@ -221,10 +220,10 @@ public class Chamada extends Api {
      * @param nota
      * @param comentario
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject avaliar(int id, String nota, String comentario) throws IOException
-    {
+    public JSONObject avaliar(int id, String nota, String comentario) throws Exception {
+
         JSONObject data = new JSONObject();
         data.put("nota", nota);
         data.put("comentario", comentario);

@@ -1,7 +1,6 @@
 package br.com.totalvoice;
 
 import org.json.JSONObject;
-import java.io.IOException;
 
 public interface ClientInterface {
 
@@ -14,25 +13,25 @@ public interface ClientInterface {
      *
      * @param request
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject get(RequestInterface request) throws IOException;
+    public JSONObject get(RequestInterface request) throws Exception;
 
     /**
      * POST method
      * @return String
      */
-    public JSONObject post(RequestInterface request, JSONObject data) throws IOException;
+    public JSONObject post(RequestInterface request, JSONObject data) throws Exception;
 
     /**
      * PUT method
      * @return String
      */
-    public JSONObject put(RequestInterface request, JSONObject data) throws IOException;
+    public JSONObject put(RequestInterface request, JSONObject data) throws Exception;
 
     /**
      * DELETE method
      * @return String
      */
-    public JSONObject delete(RequestInterface request) throws IOException;
+    public JSONObject delete(RequestInterface request) throws Exception;
 }

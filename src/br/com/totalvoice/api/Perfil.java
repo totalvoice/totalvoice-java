@@ -5,7 +5,6 @@ import br.com.totalvoice.Path;
 import br.com.totalvoice.QueryString;
 import br.com.totalvoice.RequestInterface;
 import org.json.JSONObject;
-import java.io.IOException;
 
 public class Perfil extends Api {
 
@@ -31,10 +30,10 @@ public class Perfil extends Api {
     /**
      * Consulta o saldo da conta
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject consultaSaldo() throws IOException
-    {
+    public JSONObject consultaSaldo() throws Exception {
+
         Path path = new Path();
         path.add(ROTA_SALDO);
         request.setPath(path);
@@ -45,10 +44,10 @@ public class Perfil extends Api {
     /**
      * Consulta os dados da Minha Conta
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject minhaConta() throws IOException
-    {
+    public JSONObject minhaConta() throws Exception {
+
         Path path = new Path();
         path.add(ROTA_CONTA);
         request.setPath(path);
@@ -60,10 +59,10 @@ public class Perfil extends Api {
      * Atualiza os dados da Minha
      * @param data
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject atualizaDadosConta(JSONObject data) throws IOException
-    {
+    public JSONObject atualizaDadosConta(JSONObject data) throws Exception {
+
         Path path = new Path();
         path.add(ROTA_CONTA);
         request.setPath(path);
@@ -74,10 +73,10 @@ public class Perfil extends Api {
     /**
      * Consulta o saldo da conta
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject relatorioRecarga() throws IOException
-    {
+    public JSONObject relatorioRecarga() throws Exception {
+
         Path path = new Path();
         path.add(ROTA_CONTA);
         path.add("recargas");
@@ -89,10 +88,10 @@ public class Perfil extends Api {
     /**
      * Gera uma URL para recarga de créditos
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject urlRecarga(String urlRetorno) throws IOException
-    {
+    public JSONObject urlRecarga(String urlRetorno) throws Exception {
+
         Path path = new Path();
         path.add(ROTA_CONTA);
         path.add("urlrecarga");
@@ -109,10 +108,10 @@ public class Perfil extends Api {
     /**
      * Retorna a lista de webhooks configurados para esta conta
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject webhooks() throws IOException
-    {
+    public JSONObject webhooks() throws Exception {
+
         Path path = new Path();
         path.add(ROTA_WEBHOOK);
                 
@@ -124,10 +123,10 @@ public class Perfil extends Api {
     /**
      * Apaga um Webhook
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject excluirWebhook(String nome) throws IOException
-    {
+    public JSONObject excluirWebhook(String nome) throws Exception {
+
         Path path = new Path();
         path.add(ROTA_WEBHOOK);
         path.add(nome);
@@ -140,10 +139,10 @@ public class Perfil extends Api {
     /**
      * Cadastra ou atualiza um webhook
      * @return
-     * @throws IOException
+     * @throws Exception
      */
-    public JSONObject salvaWebhook(String nome, String url) throws IOException
-    {
+    public JSONObject salvaWebhook(String nome, String url) throws Exception {
+
         Path path = new Path();
         path.add(ROTA_WEBHOOK);
         path.add(nome);
