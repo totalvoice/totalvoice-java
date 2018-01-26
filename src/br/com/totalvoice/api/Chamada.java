@@ -67,7 +67,7 @@ public class Chamada extends Api {
     }
 
     /**
-     * Leitura dos dados da Conta criada
+     * busca os dados da chamada
      * @param id
      * @return
      * @throws IOException
@@ -100,7 +100,7 @@ public class Chamada extends Api {
     }
 
     /**
-     * Leitura dos dados da Conta criada
+     * URL para download do audio
      * @param id
      * @return
      * @throws IOException
@@ -118,7 +118,7 @@ public class Chamada extends Api {
     }
 
     /**
-     * Relatório de mensagens de Sms
+     * Relatório de chamadas
      * @param dataInicio
      * @param dataFim
      * @return

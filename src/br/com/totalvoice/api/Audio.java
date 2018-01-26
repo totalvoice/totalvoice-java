@@ -114,7 +114,7 @@ public class Audio extends Api {
     }
 
     /**
-     * Busca um sms pelo seu ID
+     * Busca um envio de audio pelo seu ID
      * @param id
      * @return
      * @throws IOException
