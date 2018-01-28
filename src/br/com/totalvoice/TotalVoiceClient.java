@@ -92,12 +92,8 @@ public class TotalVoiceClient implements ClientInterface {
 
         ResponseHandler<String> responseHandler = response -> {
             int status = response.getStatusLine().getStatusCode();
-            if (status >= 200 && status < 300) {
-                HttpEntity entity = response.getEntity();
-                return entity != null ? EntityUtils.toString(entity) : null;
-            } else {
-                throw new ClientProtocolException("Unexpected response status: " + status);
-            }
+            HttpEntity entity = response.getEntity();
+            return entity != null ? EntityUtils.toString(entity) : null;
         };
 
         String responseBody = client.execute(request, responseHandler);
