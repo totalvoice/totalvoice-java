@@ -28,3 +28,31 @@ Os métodos da API que poderão ser invocados:
 - sms
 - tts
 
+A seguir um pequeno exemplo de como pode ser utilizada esta biblioteca.
+
+> ##### Realiza uma chamada telefônica entre dois números: A e B
+
+```java
+package br.com.totalvoice;
+
+import br.com.totalvoice.api.Chamada;
+import org.json.JSONObject;
+
+public class Main {
+    
+    public static void main(String args[]) {
+        
+        try {
+            TotalVoiceClient client = new TotalVoiceClient("{{access-token}}");
+            Chamada chamada = new Chamada(client);
+
+            JSONObject result = chamada.ligar("NUMEROA", "NUMEROB");
+            System.out.println(result);
+
+        } catch(Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+}
+
+```
