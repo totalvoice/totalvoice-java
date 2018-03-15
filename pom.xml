@@ -25,7 +25,9 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/totalvoice/totalvoice-java</url>
+        <connection>scm:git:https://github.com/totalvoice/totalvoice-java.git</connection>
+        <developerConnection>scm:git:https://github.com/totalvoice/totalvoice-java.git </developerConnection>
+        <url>https://github.com/totalvoice/totalvoice-java.git</url>
     </scm>
 
     <developers>
