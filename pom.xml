@@ -10,6 +10,12 @@
 
     <url>https://github.com/totalvoice/totalvoice-java</url>
 
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
+
     <licenses>
         <license>
             <name>The MIT License (MIT)</name>
@@ -17,6 +23,21 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
+
+    <scm>
+        <url>https://github.com/totalvoice/totalvoice-java</url>
+    </scm>
+
+    <developers>
+        <developer>
+            <id>dilowagner</id>
+            <name>Diego Wagner</name>
+            <email>diego@totalvoice.com.br</email>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
 
     <issueManagement>
         <system>GitHub</system>
@@ -31,16 +52,6 @@
         <name>TotalVoice</name>
         <url>http://www.totalvoice.com.br/</url>
     </organization>
-
-    <developers>
-        <developer>
-            <id>dilowagner</id>
-            <name>Diego Wagner</name>
-            <email>diego@totalvoice.com.br</email>
-            <organization>TotalVoice</organization>
-            <organizationUrl>http://www.totalvoice.com.br</organizationUrl>
-        </developer>
-    </developers>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -81,8 +92,11 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>2.1</version>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+                <configuration>
+                    <pushChanges>false</pushChanges>
+                </configuration>
                 <executions>
                     <execution>
                         <phase>package</phase>
