@@ -9,6 +9,7 @@ Client em Java para utilização da API da TotalVoice
 - [X] Consulta e envio de Audio
 - [X] Gerenciamento da Conta
 - [X] Gerenciamento da Central
+- [X] Gerenciamento da DID
 
 > ### Utilização
 
