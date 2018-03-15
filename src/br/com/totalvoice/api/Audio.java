@@ -94,6 +94,80 @@ public class Audio extends Api {
      * Envia um audio para um número destino
      * @param numero
      * @param urlAudio
+     * @param respostaUsuario
+     * @param bina
+     * @param gravarAudio
+     * @return
+     * @throws Exception
+     */
+    public JSONObject enviar(String numero, String urlAudio, boolean respostaUsuario, String bina, boolean gravarAudio) throws Exception {
+
+        JSONObject data = new JSONObject();
+        data.put("numero_destino", numero);
+        data.put("url_audio", urlAudio);
+        data.put("resposta_usuario", respostaUsuario);
+        data.put("bina", bina);
+        data.put("gravar_audio", gravarAudio);
+
+        Path path = new Path();
+        path.add(ROTA_AUDIO);
+        request.setPath(path);
+
+        return client.post(request, data);
+    }
+
+    /**
+     * Envia um audio para um número destino
+     * @param numero
+     * @param urlAudio
+     * @param respostaUsuario
+     * @param gravarAudio
+     * @return
+     * @throws Exception
+     */
+    public JSONObject enviar(String numero, String urlAudio, boolean respostaUsuario, boolean gravarAudio) throws Exception {
+
+        JSONObject data = new JSONObject();
+        data.put("numero_destino", numero);
+        data.put("url_audio", urlAudio);
+        data.put("resposta_usuario", respostaUsuario);
+        data.put("gravar_audio", gravarAudio);
+
+        Path path = new Path();
+        path.add(ROTA_AUDIO);
+        request.setPath(path);
+
+        return client.post(request, data);
+    }
+
+    /**
+     * Envia um audio para um número destino
+     * @param numero
+     * @param urlAudio
+     * @param bina
+     * @param gravarAudio
+     * @return
+     * @throws Exception
+     */
+    public JSONObject enviar(String numero, String urlAudio, String bina, boolean gravarAudio) throws Exception {
+
+        JSONObject data = new JSONObject();
+        data.put("numero_destino", numero);
+        data.put("url_audio", urlAudio);
+        data.put("bina", bina);
+        data.put("gravar_audio", gravarAudio);
+
+        Path path = new Path();
+        path.add(ROTA_AUDIO);
+        request.setPath(path);
+
+        return client.post(request, data);
+    }
+
+    /**
+     * Envia um audio para um número destino
+     * @param numero
+     * @param urlAudio
      * @param bina
      * @return
      * @throws Exception
