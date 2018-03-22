@@ -1,6 +1,10 @@
 package br.com.totalvoice.api;
 
-import main.java.totalvoice.*;
+import br.com.totalvoice.ClientInterface;
+import br.com.totalvoice.Path;
+import br.com.totalvoice.QueryString;
+import br.com.totalvoice.RequestInterface;
+import br.com.totalvoice.Constants;
 import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
