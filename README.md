@@ -18,6 +18,22 @@ Após a criação do cadastro será disponibilizado um AccessToken para acesso a
 
 Com o AccessToken em mãos será possível realizar as consultas/cadastros conforme documentação da [API](https://api.totalvoice.com.br/doc/#/)
 
+> #### Instalando com o Maven
+
+Basta adicionar este trecho no pom.xml
+
+```xml
+
+    <dependencies>
+        <dependency>
+            <groupId>br.com.totalvoice</groupId>
+            <artifactId>totalvoice-java</artifactId>
+            <version>0.0.4-rc</version>
+        </dependency>
+    </dependencies>
+
+```
+
 Os métodos da API que poderão ser invocados:
 - audio
 - central
