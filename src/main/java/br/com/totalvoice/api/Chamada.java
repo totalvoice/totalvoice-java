@@ -1,6 +1,6 @@
 package br.com.totalvoice.api;
 
-import br.com.totalvoice.*;
+import main.java.totalvoice.*;
 import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;

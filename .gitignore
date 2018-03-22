@@ -1,6 +1,7 @@
 # Compiled class file
 *.class
 Main.java
+/target/
 
 # Log file
 *.log

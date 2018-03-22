@@ -1,7 +1,5 @@
 package br.com.totalvoice;
 
-import java.util.Map;
-
 public class Request implements RequestInterface {
 
     private Path path;
