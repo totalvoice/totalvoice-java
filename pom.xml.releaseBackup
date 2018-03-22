@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>br.com.totalvoice</groupId>
     <artifactId>totalvoice-java</artifactId>
-    <version>0.0.3-rc</version>
+    <version>0.0.3-rc-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>TotalVoice API Client</name>
 
@@ -98,13 +98,6 @@
                 <version>2.5.3</version>
                 <configuration>
                     <pushChanges>false</pushChanges>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <configuration>
-                    <additionalparam>-Xdoclint:none</additionalparam>
                 </configuration>
             </plugin>
         </plugins>
