@@ -5,7 +5,7 @@ import org.json.JSONObject;
 public interface ClientInterface {
 
     /**
-     * @var String
+     *
      */
     public static final String BASE_URL = "https://api2.totalvoice.com.br";
 
@@ -18,20 +18,28 @@ public interface ClientInterface {
     public JSONObject get(RequestInterface request) throws Exception;
 
     /**
-     * POST method
-     * @return String
+     *
+     * @param request
+     * @param data
+     * @return
+     * @throws Exception
      */
     public JSONObject post(RequestInterface request, JSONObject data) throws Exception;
 
     /**
-     * PUT method
-     * @return String
+     *
+     * @param request
+     * @param data
+     * @return
+     * @throws Exception
      */
     public JSONObject put(RequestInterface request, JSONObject data) throws Exception;
 
     /**
-     * DELETE method
-     * @return String
+     *
+     * @param request
+     * @return
+     * @throws Exception
      */
     public JSONObject delete(RequestInterface request) throws Exception;
 }

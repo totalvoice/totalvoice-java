@@ -10,17 +10,19 @@ public interface RequestInterface {
 
     /**
      *
-     * @return List
+     * @return
      */
     public Path getPath();
 
     /**
-     * @return String
+     *
+     * @return
      */
     public String getPathString();
 
     /**
-     * @return String
+     *
+     * @return
      */
     public String getURL();
 
@@ -32,13 +34,13 @@ public interface RequestInterface {
 
     /**
      *
-     * @return Map
+     * @return
      */
     public QueryString getQuery();
 
     /**
      *
-     * @return String
+     * @return
      */
     public String getQueryString();
 }

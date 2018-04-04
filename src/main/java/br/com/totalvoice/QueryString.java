@@ -14,6 +14,7 @@ public class QueryString {
     }
 
     /**
+     *
      * @param key
      * @param value
      */
@@ -22,14 +23,16 @@ public class QueryString {
     }
 
     /**
-     * @return Boolean
+     *
+     * @return
      */
     public boolean isEmpty() {
         return query.isEmpty();
     }
 
     /**
-     * @return String
+     *
+     * @return
      */
     public String build() {
         String queryString = "";

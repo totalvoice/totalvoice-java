@@ -15,6 +15,7 @@ public class Audio extends Api {
     public static final String ROTA_AUDIO = "audio";
 
     /**
+     *
      * @param client
      */
     public Audio(ClientInterface client) {
@@ -22,6 +23,7 @@ public class Audio extends Api {
     }
 
     /**
+     *
      * @param client
      * @param request
      */
@@ -53,6 +55,7 @@ public class Audio extends Api {
      * Envia um audio para um número destino
      * @param numero
      * @param urlAudio
+     * @param respostaUsuario
      * @return
      * @throws Exception
      */
