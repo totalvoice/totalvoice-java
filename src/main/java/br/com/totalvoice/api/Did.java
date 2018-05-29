@@ -1,9 +1,10 @@
 package br.com.totalvoice.api;
 
-import br.com.totalvoice.ClientInterface;
-import br.com.totalvoice.Path;
-import br.com.totalvoice.RequestInterface;
+import br.com.totalvoice.*;
 import org.json.JSONObject;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Did extends Api {
 
@@ -142,6 +143,34 @@ public class Did extends Api {
         path.add(id);
 
         request.setPath(path);
+
+        return client.get(request);
+    }
+
+    /**
+     * Relatório de mensagens de Chamadas DID
+     * @param dataInicio
+     * @param dataFim
+     * @return
+     * @throws Exception
+     */
+    public JSONObject relatorio(Date dataInicio, Date dataFim) throws Exception {
+
+        SimpleDateFormat formatter = new SimpleDateFormat(Constants.DATE_FORMAT);
+
+        String dataInicial = formatter.format(dataInicio);
+        String dataFinal = formatter.format(dataFim);
+
+        Path path = new Path();
+        path.add(ROTA_DID);
+        path.add("relatorio");
+
+        QueryString query = new QueryString();
+        query.add("data_inicio", dataInicial);
+        query.add("data_fim", dataFinal);
+
+        request.setPath(path);
+        request.setQuery(query);
 
         return client.get(request);
     }
