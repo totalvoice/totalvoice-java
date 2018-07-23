@@ -28,7 +28,7 @@ Basta adicionar este trecho no pom.xml
         <dependency>
             <groupId>br.com.totalvoice</groupId>
             <artifactId>totalvoice-java</artifactId>
-            <version>1.0.4</version>
+            <version>1.0.6</version>
         </dependency>
     </dependencies>
 
