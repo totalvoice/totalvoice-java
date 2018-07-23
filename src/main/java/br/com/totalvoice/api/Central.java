@@ -60,7 +60,7 @@ public class Central extends Api {
 
         request.setPath(path);
 
-        return client.post(request, data);
+        return client.put(request, data);
     }
 
     /**
@@ -81,7 +81,7 @@ public class Central extends Api {
 
         request.setPath(path);
 
-        return client.post(request, data);
+        return client.put(request, data);
     }
 
     /**
