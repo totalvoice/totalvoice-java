@@ -14,11 +14,11 @@ public class Fila extends Api {
 
     public static final String ROTA_FILA = "fila";
 
-    public Tts(ClientInterface client) {
+    public Fila(ClientInterface client) {
         super(client);
     }
 
-    public Tts(ClientInterface client, RequestInterface request) {
+    public Fila(ClientInterface client, RequestInterface request) {
         super(client, request);
     }
 
