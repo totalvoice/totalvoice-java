@@ -2,13 +2,8 @@ package br.com.totalvoice.api;
 
 import br.com.totalvoice.ClientInterface;
 import br.com.totalvoice.Path;
-import br.com.totalvoice.QueryString;
 import br.com.totalvoice.RequestInterface;
-import br.com.totalvoice.Constants;
 import org.json.JSONObject;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class Fila extends Api {
 
@@ -25,16 +20,15 @@ public class Fila extends Api {
     /**
      * Cria uma fila
      * @param nome
-     * @param estrategia_ring
-     * @param timeout_ring
+     * @param estrategiaRing
      * @return
      * @throws Exception
      */
-    public JSONObject enviar(String nome, String estrategia_ring) throws Exception {
+    public JSONObject enviar(String nome, String estrategiaRing) throws Exception {
 
         JSONObject data = new JSONObject();
         data.put("nome", nome);
-        data.put("estrategia_ring", estrategia_ring);
+        data.put("estrategia_ring", estrategiaRing);
 
         Path path = new Path();
         path.add(ROTA_FILA);
@@ -46,17 +40,17 @@ public class Fila extends Api {
     /**
      * Cria uma fila
      * @param nome
-     * @param estrategia_ring
-     * @param timeout_ring
+     * @param estrategiaRing
+     * @param timeoutRing
      * @return
      * @throws Exception
      */
-    public JSONObject enviar(String nome, String estrategia_ring, int timeout_ring) throws Exception {
+    public JSONObject enviar(String nome, String estrategiaRing, int timeoutRing) throws Exception {
 
         JSONObject data = new JSONObject();
         data.put("nome", nome);
-        data.put("estrategia_ring", estrategia_ring);
-        data.put("timeout_ring", timeout_ring);
+        data.put("estrategia_ring", estrategiaRing);
+        data.put("timeout_ring", timeoutRing);
 
         Path path = new Path();
         path.add(ROTA_FILA);
@@ -76,11 +70,6 @@ public class Fila extends Api {
 
         JSONObject data = new JSONObject();
         data.put("ramalId", ramalId);
-
-        Object id = data.get("id");
-        if(id == null) {
-            throw new Exception("Nao foi possivel recuperar o ID da Fila");
-        }
 
         Path path = new Path();
         path.add(ROTA_FILA);
