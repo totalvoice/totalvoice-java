@@ -127,4 +127,26 @@ public class Conta extends Api {
 
         return client.get(request);
     }
+
+    /**
+     *  Credita valor de bônus em uma conta filha
+     * @param id
+     * @param valor
+     * @return
+     * @throws Exception
+     */
+    public JSONObject recargaBonus(int id, float valor) throws Exception {
+
+        Path path = new Path();
+        path.add(ROTA_CONTA);
+        path.add(id);
+        path.add("bonus");
+        
+        JSONObject data = new JSONObject();
+        data.put("valor", valor);
+
+        request.setPath(path);
+
+        return client.post(request, data);
+    }
 }
