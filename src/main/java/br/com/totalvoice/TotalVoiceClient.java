@@ -11,29 +11,16 @@ import org.json.JSONObject;
 
 public class TotalVoiceClient implements ClientInterface {
 
-    /**
-     * @var String
-     */
     private static final String VERSION = "0.0.1";
 
-    /**
-     * Access Token
-     * @var String
-     */
     private String token;
 
-    /**
-     * Base URL
-     * @var String
-     */
     private String baseUrl;
 
-    /**
-     * @var HttpClient
-     */
     private HttpClient client;
 
     /**
+     *
      * @param token
      */
     public TotalVoiceClient(final String token) {
@@ -43,6 +30,7 @@ public class TotalVoiceClient implements ClientInterface {
     }
 
     /**
+     *
      * @param token
      * @param baseUrl
      */

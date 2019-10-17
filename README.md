@@ -28,7 +28,7 @@ Basta adicionar este trecho no pom.xml
         <dependency>
             <groupId>br.com.totalvoice</groupId>
             <artifactId>totalvoice-java</artifactId>
-            <version>0.0.4-rc</version>
+            <version>1.1.1</version>
         </dependency>
     </dependencies>
 
@@ -60,7 +60,7 @@ public class Main {
     public static void main(String args[]) {
         
         try {
-            TotalVoiceClient client = new TotalVoiceClient("{{access-token}}");
+            TotalVoiceClient client = new TotalVoiceClient("access-token");
             Chamada chamada = new Chamada(client);
 
             JSONObject result = chamada.ligar("NUMEROA", "NUMEROB");
@@ -87,7 +87,7 @@ public class Main {
     public static void main(String args[]) {
         
         try {
-            TotalVoiceClient client = new TotalVoiceClient("{{access-token}}");
+            TotalVoiceClient client = new TotalVoiceClient("access-token");
             Chamada chamada = new Chamada(client);
 
             JSONObject result = chamada.buscar(123); // ID da chamada
@@ -114,7 +114,7 @@ public class Main {
     public static void main(String args[]) {
         
         try {
-            TotalVoiceClient client = new TotalVoiceClient("{{access-token}}");
+            TotalVoiceClient client = new TotalVoiceClient("access-token");
             Chamada chamada = new Chamada(client);
 
             JSONObject result = chamada.encerrar(123); // ID da chamada
@@ -141,7 +141,7 @@ public class Main {
     public static void main(String args[]) {
         
         try {
-            TotalVoiceClient client = new TotalVoiceClient("{{access-token}}");
+            TotalVoiceClient client = new TotalVoiceClient("access-token");
             Sms sms = new Sms(client);
 
             JSONObject result = sms.enviar("NUMERO", "SUA MENSAGEM");
@@ -168,7 +168,7 @@ public class Main {
     public static void main(String args[]) {
         
         try {
-            TotalVoiceClient client = new TotalVoiceClient("{{access-token}}");
+            TotalVoiceClient client = new TotalVoiceClient("access-token");
             Tts tts = new Tts(client);
 
             JSONObject result = tts.enviar("NUMERO", "SUA MENSAGEM");
@@ -195,7 +195,7 @@ public class Main {
     public static void main(String args[]) {
         
         try {
-            TotalVoiceClient client = new TotalVoiceClient("{{access-token}}");
+            TotalVoiceClient client = new TotalVoiceClient("access-token");
             Audio audio = new Audio(client);
 
             JSONObject result = audio.enviar("NUMERO", "http://foo.bar/audio.mp3");
@@ -222,7 +222,7 @@ public class Main {
     public static void main(String args[]) {
         
         try {
-            TotalVoiceClient client = new TotalVoiceClient("{{access-token}}");
+            TotalVoiceClient client = new TotalVoiceClient("access-token");
             Central central = new Central(client);
 
             JSONObject result = central.buscarRamal(123); // ID do Ramal
@@ -249,7 +249,7 @@ public class Main {
     public static void main(String args[]) {
         
         try {
-            TotalVoiceClient client = new TotalVoiceClient("{{access-token}}");
+            TotalVoiceClient client = new TotalVoiceClient("access-token");
             Conta conta = new Conta(client);
 
             JSONObject result = conta.buscarConta(123);
@@ -276,7 +276,7 @@ public class Main {
     public static void main(String args[]) {
         
         try {
-            TotalVoiceClient client = new TotalVoiceClient("{{access-token}}");
+            TotalVoiceClient client = new TotalVoiceClient("access-token");
             Perfil perfil = new Perfil(client);
 
             JSONObject result = perfil.consultaSaldo();
@@ -305,7 +305,7 @@ public class Main {
     public static void main(String args[]) {
         
         try {
-            TotalVoiceClient client = new TotalVoiceClient("{{access-token}}", "https://meuhost.com.br");
+            TotalVoiceClient client = new TotalVoiceClient("access-token", "https://meuhost.com.br");
             Perfil perfil = new Perfil(client);
 
             JSONObject result = perfil.consultaSaldo();
@@ -332,7 +332,7 @@ public class Main {
     public static void main(String args[]) {
         
         try {
-            TotalVoiceClient client = new TotalVoiceClient("{{access-token}}");
+            TotalVoiceClient client = new TotalVoiceClient("access-token");
             Did did = new Did(client);
 
             JSONObject result = did.estoque();
@@ -359,7 +359,7 @@ public class Main {
     public static void main(String args[]) {
         
         try {
-            TotalVoiceClient client = new TotalVoiceClient("{{access-token}}");
+            TotalVoiceClient client = new TotalVoiceClient("access-token");
             Did did = new Did(client);
 
             JSONObject result = did.adquirir(1); // ID do DID
@@ -386,7 +386,7 @@ public class Main {
     public static void main(String args[]) {
         
         try {
-            TotalVoiceClient client = new TotalVoiceClient("{{access-token}}");
+            TotalVoiceClient client = new TotalVoiceClient("access-token");
             Did did = new Did(client);
 
             JSONObject result = did.listar();
