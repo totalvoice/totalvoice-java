@@ -116,10 +116,11 @@ public class Conta extends Api {
      *  Credita valor de bônus em uma conta filha
      * @param id
      * @param valor
+     * @param nome
      * @return
      * @throws Exception
      */
-    public JSONObject recargaBonus(int id, float valor) throws Exception {
+    public JSONObject recargaBonus(int id, float valor, String nome) throws Exception {
 
         Path path = new Path();
         path.add(ROTA_CONTA);
@@ -128,6 +129,7 @@ public class Conta extends Api {
 
         JSONObject data = new JSONObject();
         data.put("valor", valor);
+        data.put("nome", nome);
 
         request.setPath(path);
 
