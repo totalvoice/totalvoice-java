@@ -191,7 +191,7 @@ public class Conta extends Api {
      * @return
      * @throws Exception
      */
-    public JSONObject salvaWebhookDefault(String nome, String url) throws Exception {
+    public JSONObject salvarWebhookDefault(String nome, String url) throws Exception {
 
         Path path = new Path();
         path.add(ROTA_CONTA);
