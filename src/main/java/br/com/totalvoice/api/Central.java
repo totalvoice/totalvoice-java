@@ -13,6 +13,7 @@ import java.util.Date;
 public class Central extends Api {
 
     public static final String ROTA_RAMAL = "ramal";
+    public static final String ROTA_FILA = "fila";
     public static final String ROTA_WEBPHONE = "webphone";
     public static final String ROTA_URA = "ura";
 
@@ -57,6 +58,24 @@ public class Central extends Api {
         Path path = new Path();
         path.add(ROTA_RAMAL);
         path.add(id);
+
+        request.setPath(path);
+
+        return client.put(request, data);
+    }
+
+    /**
+     * Atualiza um ramal na fila
+     * @param data
+     * @return
+     * @throws Exception
+     */
+    public JSONObject atualizarRamalFila(int id, JSONObject data) throws Exception {
+
+        Path path = new Path();
+        path.add(ROTA_RAMAL);
+        path.add(id);
+        path.add(ROTA_FILA);
 
         request.setPath(path);
 
