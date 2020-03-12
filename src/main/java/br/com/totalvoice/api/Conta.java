@@ -8,6 +8,7 @@ import org.json.JSONObject;
 public class Conta extends Api {
 
     public static final String ROTA_CONTA = "conta";
+    public static final String ROTA_WEBHOOK_DEFAULT = "webhook-default";
 
     /**
      * @param client
@@ -150,5 +151,58 @@ public class Conta extends Api {
         request.setPath(path);
 
         return client.get(request);
+    }
+
+     /**
+     * Retorna a lista de webhooks default configurados para esta conta
+     * @return
+     * @throws Exception
+     */
+    public JSONObject webhooksDefault() throws Exception {
+
+        Path path = new Path();
+        path.add(ROTA_CONTA);
+        path.add(ROTA_WEBHOOK_DEFAULT);
+                
+        request.setPath(path);     
+
+        return client.get(request);
+    }
+
+    /**
+     * Apaga um Webhook default
+     * @return
+     * @throws Exception
+     */
+    public JSONObject excluirWebhookDefault(String nome) throws Exception {
+
+        Path path = new Path();
+        path.add(ROTA_CONTA);
+        path.add(ROTA_WEBHOOK_DEFAULT);
+        path.add(nome);
+
+        request.setPath(path);
+
+        return client.delete(request);
+    }
+
+    /**
+     * Cadastra ou atualiza um webhook default
+     * @return
+     * @throws Exception
+     */
+    public JSONObject salvarWebhookDefault(String nome, String url) throws Exception {
+
+        Path path = new Path();
+        path.add(ROTA_CONTA);
+        path.add(ROTA_WEBHOOK_DEFAULT);
+        path.add(nome);
+
+        request.setPath(path);
+
+        JSONObject data = new JSONObject();
+        data.put("url", url);
+
+        return client.put(request, data);
     }
 }
