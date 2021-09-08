@@ -7,7 +7,7 @@ public interface ClientInterface {
     /**
      *
      */
-    public static final String BASE_URL = "https://api2.totalvoice.com.br";
+    public static final String BASE_URL = "https://voice-api.zenvia.com";
 
     /**
      *
