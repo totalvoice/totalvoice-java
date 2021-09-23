@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>br.com.totalvoice</groupId>
     <artifactId>totalvoice-java</artifactId>
-    <version>1.4.11</version>
+    <version>1.4.12-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>TotalVoice API Client</name>
 
@@ -38,7 +38,7 @@
         <connection>scm:git:https://github.com/totalvoice/totalvoice-java.git</connection>
         <developerConnection>scm:git:https://github.com/totalvoice/totalvoice-java.git </developerConnection>
         <url>https://github.com/totalvoice/totalvoice-java.git</url>
-      <tag>totalvoice-java-1.4.11</tag>
+      <tag>totalvoice-java-1.4.5</tag>
   </scm>
 
     <developers>
