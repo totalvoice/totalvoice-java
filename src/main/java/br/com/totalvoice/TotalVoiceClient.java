@@ -11,7 +11,7 @@ import org.json.JSONObject;
 
 public class TotalVoiceClient implements ClientInterface {
 
-    private static final String VERSION = "0.0.1";
+    private static final String VERSION = "1.4.0";
 
     private String token;
 
@@ -76,6 +76,7 @@ public class TotalVoiceClient implements ClientInterface {
 
         request.addHeader("Access-Token", token);
         request.addHeader("Content-Type", "application/json");
+        request.addHeader("User-Agent", "lib-java/"+VERSION);
 
         ResponseHandler<String> responseHandler = response -> {
             int status = response.getStatusLine().getStatusCode();
