@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>br.com.totalvoice</groupId>
     <artifactId>totalvoice-java</artifactId>
-    <version>1.2.1-SNAPSHOT</version>
+    <version>1.4.13-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>TotalVoice API Client</name>
 
@@ -23,11 +23,22 @@
         </license>
     </licenses>
 
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
     <scm>
         <connection>scm:git:https://github.com/totalvoice/totalvoice-java.git</connection>
         <developerConnection>scm:git:https://github.com/totalvoice/totalvoice-java.git </developerConnection>
         <url>https://github.com/totalvoice/totalvoice-java.git</url>
-      <tag>totalvoice-java-1.0.1-SNAPSHOT</tag>
+      <tag>totalvoice-java-1.4.5</tag>
   </scm>
 
     <developers>
@@ -116,4 +127,37 @@
         </plugins>
     </build>
 
+    <profiles>
+        <profile>
+            <id>sign-artifacts</id>
+            <activation>
+                <property>
+                    <name>performRelease</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.5</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                                <configuration>
+                                    <homedir>${gpg.homedir}</homedir>
+                                    <passphrase>${gpg.passphrase}</passphrase>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
