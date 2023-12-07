@@ -49,14 +49,14 @@ public class TotalVoiceClient implements ClientInterface {
     @Override
     public JSONObject post(RequestInterface request, JSONObject data) throws Exception {
         HttpPost post = new HttpPost(baseUrl + request.getURL());
-        post.setEntity(new StringEntity(data.toString()));
+        post.setEntity(new StringEntity(data.toString(), "UTF-8"));
         return execute(post);
     }
 
     @Override
     public JSONObject put(RequestInterface request, JSONObject data) throws Exception {
         HttpPut put = new HttpPut(baseUrl + request.getURL());
-        put.setEntity(new StringEntity(data.toString()));
+        put.setEntity(new StringEntity(data.toString(), "UTF-8"));
         return execute(put);
     }
 
